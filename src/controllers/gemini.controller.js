@@ -15,7 +15,8 @@ exports.sendResponse = catchAsync(async (req, res, next) => {
             return next(new AppError("Please provide history and message", 400))
         }
 
-        const model = generativeAI.getGenerativeModel({ model: "gemini-pro" })
+        const model = generativeAI.getGenerativeModel({ model: "gemini-pro",
+        systemInstruction:"your name is queen and your are a medical doctor that answers only medical related questions."})
 
         const chat = model.startChat({
             History: history,
