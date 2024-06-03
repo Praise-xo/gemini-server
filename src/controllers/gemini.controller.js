@@ -2,7 +2,7 @@ const catchAsync = require('../utils/catchAsync')
 const AppError = require('../utils/appError')
 require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai')
-const generativeAI = new GoogleGenerativeAI('AIzaSyD10nMDapXr6_UCMCgUmL2IWpWrAbc4MSg')
+const generativeAI = new GoogleGenerativeAI('')
 
 
 exports.sendResponse = catchAsync(async (req, res, next) => {
