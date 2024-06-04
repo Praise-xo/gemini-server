@@ -2,7 +2,7 @@ const catchAsync = require('../utils/catchAsync')
 const AppError = require('../utils/appError')
 require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai')
-const generativeAI = new GoogleGenerativeAI('')
+const generativeAI = new GoogleGenerativeAI('AIzaSyCm5Ws8RemCkQm4NjGoSqJkkXJQypoaEkA')
 
 
 exports.sendResponse = catchAsync(async (req, res, next) => {
@@ -16,7 +16,7 @@ exports.sendResponse = catchAsync(async (req, res, next) => {
         }
 
         const model = generativeAI.getGenerativeModel({  model: "gemini-1.5-flash",
-        systemInstruction:"your name is queen and your are a medical doctor that answers only medical related questions."})
+        systemInstruction:"your name is Zerro-kun and you are a Business Advisor that answers only business related questions."})
 
         const chat = model.startChat({
             History: history,
